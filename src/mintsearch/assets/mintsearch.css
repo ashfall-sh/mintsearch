@@ -1,0 +1,159 @@
+/* mintsearch: search for self-hosted Mintlify docs, in light and dark */
+.mintsearch {
+  --mintsearch-ground: #ffffff;
+  --mintsearch-edge: rgba(13, 13, 15, 0.12);
+  --mintsearch-ink: #101012;
+  --mintsearch-quiet: #5c5c64;
+  --mintsearch-rail: #4a4a50;
+  --mintsearch-picked: rgba(74, 74, 80, 0.12);
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mintsearch[hidden] {
+  display: none !important;
+}
+
+html.dark .mintsearch,
+html[data-theme="dark"] .mintsearch {
+  --mintsearch-ground: #0b0b0d;
+  --mintsearch-edge: rgba(255, 255, 255, 0.11);
+  --mintsearch-ink: #ededf0;
+  --mintsearch-quiet: #86868f;
+  --mintsearch-rail: #d8d8de;
+  --mintsearch-picked: rgba(216, 216, 222, 0.13);
+}
+
+html.mintsearch-open {
+  overflow: hidden;
+}
+
+.mintsearch-back {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 7, 11, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.mintsearch-panel {
+  position: relative;
+  margin-top: min(12vh, 120px);
+  width: min(640px, calc(100vw - 32px));
+  max-height: min(70vh, 560px);
+  display: flex;
+  flex-direction: column;
+  background: var(--mintsearch-ground);
+  color: var(--mintsearch-ink);
+  border: 1px solid var(--mintsearch-edge);
+  /* near-sharp corners */
+  border-radius: 3px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.mintsearch-field {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid var(--mintsearch-edge);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 15px;
+  padding: 16px 18px;
+  outline: none;
+  width: 100%;
+}
+
+.mintsearch-field::placeholder {
+  color: var(--mintsearch-quiet);
+}
+
+.mintsearch-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mintsearch-note {
+  padding: 18px;
+  color: var(--mintsearch-quiet);
+  font-size: 14px;
+}
+
+.mintsearch-result a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mintsearch-result.chosen a {
+  background: var(--mintsearch-picked);
+  box-shadow: inset 2px 0 0 var(--mintsearch-rail);
+}
+
+.mintsearch-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mintsearch-heading {
+  font-weight: 400;
+  color: var(--mintsearch-quiet);
+}
+
+.mintsearch-heading::before {
+  content: "› ";
+}
+
+.mintsearch-where {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--mintsearch-rail);
+  margin-top: 2px;
+}
+
+.mintsearch-text {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mintsearch-quiet);
+  margin-top: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.mintsearch mark {
+  background: transparent;
+  color: var(--mintsearch-rail);
+  font-weight: 600;
+}
+
+.mintsearch-foot {
+  display: flex;
+  gap: 14px;
+  padding: 8px 14px;
+  border-top: 1px solid var(--mintsearch-edge);
+  font-size: 11px;
+  color: var(--mintsearch-quiet);
+}
+
+@media (max-width: 520px) {
+  .mintsearch-panel {
+    margin-top: 8vh;
+    max-height: 80vh;
+  }
+}
