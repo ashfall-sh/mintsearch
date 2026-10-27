@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/logo.png" alt="mintsearch logo: a mint leaf under a magnifying glass" width="128"></p>
+
 # mintsearch
 
 Search, a sitemap and `llms.txt` for a self-hosted [Mintlify](https://mintlify.com) export.

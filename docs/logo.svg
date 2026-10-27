@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f3a31"/>
+      <stop offset="1" stop-color="#06150f"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#22a77c"/>
+      <stop offset="1" stop-color="#8ff5cd"/>
+    </linearGradient>
+    <clipPath id="lens">
+      <circle cx="226" cy="226" r="122"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="4"/>
+  <circle cx="226" cy="226" r="122" fill="#0b2a22"/>
+  <g clip-path="url(#lens)">
+    <path d="M150 312 C138 222 190 158 300 146 C312 252 256 318 150 312 Z" fill="url(#leaf)"/>
+    <path d="M156 306 C196 264 240 214 292 154" stroke="#0d5e45" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <path d="M197 260 L183 226 M224 230 L210 196 M251 200 L238 168 M197 260 L231 270 M224 230 L258 240 M251 200 L283 209" stroke="#0d5e45" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.8"/>
+    <path d="M150 170 C176 140 214 128 250 132" stroke="#ffffff" stroke-opacity="0.22" stroke-width="16" stroke-linecap="round" fill="none"/>
+  </g>
+  <circle cx="226" cy="226" r="122" fill="none" stroke="#eafff6" stroke-width="30"/>
+  <path d="M318 318 L398 398" stroke="#eafff6" stroke-width="44" stroke-linecap="round"/>
+  <path d="M318 318 L398 398" stroke="#bff3dd" stroke-width="14" stroke-linecap="round" opacity="0.5"/>
+</svg>
